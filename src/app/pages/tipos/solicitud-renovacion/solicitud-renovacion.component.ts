@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProcesosService } from '../../../services/procesos.service';
+
 
 
 @Component({
@@ -13,10 +13,9 @@ export class SolicitudRenovacionComponent implements OnInit {
 
   formulario: FormGroup;
   aparecer: boolean = true;
-  constructor(private fb: FormBuilder,
-              private proceso: ProcesosService ) { 
+  constructor(private fb: FormBuilder) { 
     this.crearFormulario();
-    this.proceso.getPersona().subscribe( s => console.log( s['persona']));
+    //this.proceso.getPersona().subscribe( s => console.log( s['persona']));
   }
 
   get nombreInvalid(){
@@ -93,7 +92,7 @@ export class SolicitudRenovacionComponent implements OnInit {
     }
 
     console.log( this.formulario.value );
-    this.proceso.postPersona(this.formulario.value).subscribe( r => console.log( r));
+    //this.proceso.postPersona(this.formulario.value).subscribe( r => console.log( r));
   }
 
 
