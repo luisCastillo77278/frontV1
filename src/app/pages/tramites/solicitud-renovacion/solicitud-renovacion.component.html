@@ -1,0 +1,142 @@
+<h1>Solicitud de renovación de registro</h1>
+        <hr>
+        <form [formGroup]="formulario"
+              (ngSubmit)="guardar()">
+          <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="nombre">Nombre del solicitante</label>
+                    <input  class="form-control"
+                            formControlName="nombre"
+                            type="text"
+                            id="nombre"
+                            placeholder="Nombre(s)"
+                            required
+                            [class.is-invalid]="nombreInvalid"
+                            >
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="nombre">Apellido paterno del solicitante</label>
+                      <input  class="form-control"
+                              formControlName="apellidoP"
+                              type="text"
+                              id="ApellidoM"
+                              placeholder="Apellido paterno"
+                              required
+                              [class.is-invalid]="apellidoPInvalid"
+                              >
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="nombre">Apellido materno del solicitante</label>
+                    <input  class="form-control"
+                            formControlName="apellidoM"
+                            type="text"
+                            id="ApellidoM"
+                            placeholder="Apellido materno"
+                            required
+                            [class.is-invalid]="apellidoMInvalid"
+                            >
+                  </div>
+                </div>
+            
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="correo">Correo</label>
+                        <input  class="form-control"
+                                formControlName="correo"
+                                type="email"
+                                id="correo"
+                                placeholder="example@example.com"
+                                [class.is-invalid]="correoInvalid"
+                                required>
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+                        <label for="telefono">Teléfono</label>
+                        <input  class="form-control"
+                                formControlName="telefono"
+                                type="tel"
+                                id="telefono"
+                                placeholder="9932245543"
+                                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                [class.is-invalid]="telInvalid"
+                                required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="numero">Número de registro</label>
+                    <input  class="form-control"
+                            formControlName="numReg"
+                            type="text"
+                            id="numero"
+                            placeholder="Número de registro"
+                            required
+                            [class.is-invalid]="numRegInvalid"
+                            >
+                </div>
+
+                <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Tipo</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios" value="option1" checked
+                          (click)="hidden()"
+                          >
+                          <label class="form-check-label" for="">
+                            Persona fisica
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios" value="option2"
+                          (click)="show()">
+                          <label class="form-check-label" for="">
+                            Persona juridica colectiva
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                </fieldset>
+
+                <!-- <div id="personal" [ngClass]="{'d-none': aparecer }">
+                  <div class="form-group">
+                      <label for="denominacion">Denominación fiscal</label>
+                      <input  class="form-control"
+                              formControlName="denominacionF"
+                              type="text"
+                              id="denominacion"
+                              placeholder="Denominación fiscal"
+                              required
+                              [class.is-invalid]="denominacionInvalid"
+                              >
+                  </div>
+  
+                  <div class="form-group">
+                      <label for="razon">Razón social</label>
+                      <input  class="form-control"
+                              formControlName="razonS"
+                              type="text"
+                              id="razon"
+                              placeholder="Razón social"
+                              required
+                              [class.is-invalid]="socialInvalid"
+                              >
+
+                  </div>
+                </div> -->
+
+                <!-- campo para el archivo firmado -->
+                
+
+                <!-- boton envio -->
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">Enviar</button>
+                </div>
+            </div>
+            </div>
+        </form>
+        
